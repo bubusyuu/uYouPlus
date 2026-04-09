@@ -133,8 +133,9 @@ jobs:
 
       - name: Remove App Extensions
         run: |
-          rm -rf ${{ github.workspace }}/main/Payload/*.app/PlugIns
-      
+          cd ${{ github.workspace }}/main
+          rm -rf Payload/YouTube.app/PlugIns
+
       - name: Fix compiling & Build Package
         id: build_package
         run: |
