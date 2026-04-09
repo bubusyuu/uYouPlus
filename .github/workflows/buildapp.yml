@@ -131,6 +131,10 @@ jobs:
           THEOS: ${{ github.workspace }}/theos
           YOUTUBE_URL: ${{ inputs.decrypted_youtube_url }}
 
+      - name: Remove App Extensions
+        run: |
+          rm -rf ${{ github.workspace }}/main/Payload/*.app/PlugIns
+      
       - name: Fix compiling & Build Package
         id: build_package
         run: |
